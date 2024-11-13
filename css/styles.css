@@ -1,0 +1,296 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+/* Estilos del header */
+header {
+    position: relative;
+    width: 100%;
+    height: 100vh; /* Ocupa el 100% de la altura del viewport */
+    overflow: hidden; /* Asegura que la imagen no se desborde */
+}
+
+.imagenfondo {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1; /* Coloca la imagen detrás del contenido */
+}
+
+.imagenfondo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Asegura que la imagen cubra todo el contenedor */
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4); /* Color negro con 50% de transparencia */
+    z-index: -1; /* Coloca la superposición detrás del contenido pero delante de la imagen */
+}
+/* TODO MEJORAR LA BARRA DE NAVEGACION CON LOS QUERYS*/
+.contenedorbarra {
+    background-color: var(--header-bg-color);
+    color: var(--header-color);
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+
+nav {
+    max-width: 96%;
+    width: 100%; /* Asegura que el nav se expanda a su máximo dentro del 80% */
+    height: 100%;
+    display: flex;
+    justify-content: space-between; /* Distribuye el logo y el ul en los extremos */
+    align-items: center; /* Alinea verticalmente los elementos */
+    margin: 0 auto; /* Centra el nav dentro del header */
+    padding: 0 10px;
+
+    & .navbarlogo {
+        flex: 1; /* Permite que el logo ocupe su espacio necesario */
+    }
+    
+    & ul {
+        display: flex;
+        justify-content: flex-end; /* Alinea los elementos del ul a la derecha */
+        gap: 20px; /* Espacio entre los elementos del menú */
+    }
+    
+    & li {
+        list-style: none;
+    }
+    
+    & a {
+        font-family: var(--font-title);
+        font-size: 1.2rem;
+        text-decoration: none;
+        color: var(--header-color); /* Color de los enlaces */
+        padding: 10px;
+        display: flex;
+        justify-content: start; 
+    }
+}
+
+.textheader {
+    font-family: var(--font-headers);
+    color: white;
+    position: absolute;
+    font-size: 1.5rem;
+    max-width: 80%;
+    top: 60%;
+    left: 50%;
+    object-fit: cover;
+
+    & h1 {
+        font-size: 4.5rem;
+        margin: 0 auto;
+        padding: 10px;
+    }
+    & p {
+        width: 70%;
+        padding: 10px;
+    }
+
+    & a {
+        font-family: var(--font-headers);
+        font-size: 1.2rem;
+        text-decoration: none;
+        color: var(--header-color); /* Color de los enlaces */
+        padding: 10px;
+        background-color: rgba(255, 255, 255, 0.2); /* Fondo semitransparente para el botón */
+        border-radius: 5px; /* Bordes redondeados para el botón */
+        margin-top: 20px; /* Espacio entre el párrafo y el botón */
+        display: inline-block;
+    }
+}
+
+/* Footer */
+
+footer {
+    background-color: #111; /* Fondo oscuro */
+    color: #fff;
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.grid-footer {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.footer-logo {
+    width: 120px;
+    margin-bottom: 20px;
+}
+
+.footer-section h2 {
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+}
+
+.footer-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-section ul li {
+    margin-bottom: 10px;
+}
+
+.footer-section a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.footer-section a:hover {
+    text-decoration: underline;
+}
+
+.sociales {
+    display: flex;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.sociales a img {
+    width: 30px;
+    height: 30px;
+}
+
+.newsletter-form {
+    display: flex;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+.newsletter-form input {
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    width: 150px;
+}
+
+.newsletter-form button {
+    padding: 10px 20px;
+    border-radius: 5px;
+    border: none;
+    background-color: #007BFF;
+    color: #fff;
+    cursor: pointer;
+}
+
+.newsletter-form button:hover {
+    background-color: #0056b3;
+}
+
+.color-foot {
+    background: black;
+}
+
+
+/* Media queries para adaptar el diseño a diferentes tamaños de pantalla */
+
+/* Oculto hamburgesa pro defecto */
+.menu-icon {
+    display: none; /* Oculto por defecto */
+    font-size: 2rem;
+    cursor: pointer;
+}
+
+@media (max-width: 1300px) {
+    
+    .textheader h1 {
+        font-size: 3rem; /* Reduce el tamaño del encabezado */
+    }
+
+    .textheader p {
+        font-size: 1rem;
+        width: 100%;
+        padding: 5px;
+    }
+
+    .textheader a {
+        font-size: 1rem;
+        padding: 8px;
+    }
+}
+
+@media (max-width: 480px) {
+    .textheader {
+        top: 50%;
+    }
+
+    .textheader h1 {
+        font-size: 1.7rem; /* Reduce aún más para pantallas muy pequeñas */
+    }
+
+    .textheader p {
+        font-size: 0.9rem;
+    }
+
+    .textheader a {
+        font-size: 0.9rem;
+        padding: 6px;
+    }
+
+    .menu-icon {
+        display: block;
+    }
+
+    .nav-menu {
+        display: none;
+        flex-direction: column;
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    .nav-menu li {
+        margin: 10px 0;
+    }
+
+    .nav-menu li a {
+        text-decoration: none;
+        color: white;
+        font-size: 1.2rem;
+    }
+
+    /* Mostrar el menú cuando esté activo */
+    .nav-menu.active {
+        display: flex;
+    }
+}
+
+
+:root {
+    --container-size: 1200px;
+    --header-bg-color: rgba(51, 51, 51, 0);
+    --header-color: #fff;
+
+    --font-title: "Roboto";
+    --font-body: "Poppins";
+    --font-headers: "Raleway";
+
+}

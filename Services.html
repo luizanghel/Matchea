@@ -1,0 +1,148 @@
+<!-- Services.html -->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Servicios - StartUP</title>
+    <link rel="stylesheet" href="css/styles_2.css">
+    <link rel="stylesheet" href="css/signup_modal.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header fijo con navegación -->
+    <header class="header">
+        <div class="container">
+            <nav class="navbar">
+                <a href="index.html" class="logo">
+                    <img src="img/logo.png" alt="LOGO" style="width: 15%;">
+                </a>
+                <ul class="nav-menu">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="About.html">About</a></li>
+                    <li><a href="Services.html">Services</a></li>
+                    <li><a href="Contact.html">Contact</a></li>   
+                    <li><a href="javascript:void(0)" id="signupButton">Sign up free</a></li>
+                    <li><a href="javascript:void(0)" id="signinButton">Login</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    
+    <!-- Sección de Servicios -->
+    <section class="services">
+        <div class="container">
+            <div class="services-header">
+                <h1>Nuestros Servicios</h1>
+                <p>Proporcionamos una variedad de servicios adaptados a las necesidades de tu startup.</p>
+            </div>
+            <div class="services-grid">
+                <div class="service-item">
+                    <div class="service-image-wrapper">
+                        <img src="img/web-development.jpg" alt="Desarrollo Web">
+                    </div>
+                    <div class="service-content">
+                        <h2>Desarrollo Web</h2>
+                        <p>Creamos páginas web optimizadas y atractivas para que tu negocio tenga una presencia efectiva en línea.</p>
+                        <a href="#" class="service-link">Saber más</a>
+                    </div>
+                </div>
+                <div class="service-item">
+                    <div class="service-image-wrapper">
+                        <img src="img/tech-consulting.jpg" alt="Consultoría Tecnológica">
+                    </div>
+                    <div class="service-content">
+                        <h2>Consultoría Tecnológica</h2>
+                        <p>Te ayudamos a tomar las mejores decisiones tecnológicas para hacer crecer tu negocio.</p>
+                        <a href="#" class="service-link">Saber más</a>
+                    </div>
+                </div>
+                <div class="service-item">
+                    <div class="service-image-wrapper">
+                        <img src="img/digital-marketing.jpg" alt="Marketing Digital">
+                    </div>
+                    <div class="service-content">
+                        <h2>Marketing Digital</h2>
+                        <p>Desarrollamos estrategias de marketing digital para aumentar la visibilidad y el alcance de tu empresa.</p>
+                        <a href="#" class="service-link">Saber más</a>
+                    </div>
+                </div>
+                <div class="service-item">
+                    <div class="service-image-wrapper">
+                        <img src="img/ui-ux-design.jpg" alt="Diseño UI/UX">
+                    </div>
+                    <div class="service-content">
+                        <h2>Diseño UI/UX</h2>
+                        <p>Diseñamos interfaces de usuario atractivas y funcionales para mejorar la experiencia de tus clientes.</p>
+                        <a href="#" class="service-link">Saber más</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <!-- Modal Sign Up Form -->
+      <div id="signupModal" class="modal">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <img src="img/logo.png" alt="LOGO" class="modal-logo">
+            <h2>Join the community</h2>
+            <form action="" method="post">
+                <input type="text" id="first-name" name="first-name" placeholder="First Name" required>
+                <input type="text" id="last-name" name="last-name" placeholder="Last Name" required>
+                <input type="email" id="email" name="email" placeholder="Email" required>
+                <input type="password" id="password" name="password" placeholder="Password" required>
+                <div class="checkbox-group">
+                    <label>
+                        <input type="checkbox" name="newsletter"> Please send me the occasional newsletter
+                    </label>
+                    <label>
+                        <input type="checkbox" name="privacy-policy" required> I agree to the privacy policy and terms of service
+                    </label>
+                </div>
+                <a href="#">Read our privacy policy</a><br>
+                <a href="#">Read our terms of service</a>
+                <button type="submit" class="submit-button">Find me a co-founder!</button>
+            </form>
+        </div>
+    </div>
+
+     <!-- Modal Sign In Form -->
+     <div id="signinModal" class="modal">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <img src="img/logo.png" alt="LOGO" class="modal-logo">
+            <h2>Welcome Back</h2>
+            <form action="" method="post">
+                <input type="email" id="email" name="email" placeholder="Email" required>
+                <input type="password" id="password" name="password" placeholder="Password" required>
+                <div class="checkbox-group">
+                    <label>
+                        <input type="checkbox" name="remember-me"> Remember me
+                    </label>
+                </div>
+                <a href="#">Forgot your password?</a><br>
+                <button type="submit" class="submit-button">Sign In</button>
+            </form>
+        </div>
+    </div>
+
+    </section>
+    
+   <!-- Footer -->
+   <footer class="footer">
+    <div class="container">
+        <p>&copy; 2024 StartUP. Todos los derechos reservados.</p>
+        <div class="social-icons">
+            <a href="https://www.facebook.com" target="_blank"><img src="img/facebook-icon.png" alt="Facebook"></a>
+            <a href="https://x.com" target="_blank"><img src="img/x-icon.png" alt="Twitter"></a>
+            <a href="https://www.instagram.com" target="_blank"><img src="img/instagram-icon.png" alt="Instagram"></a>
+        </div>
+    </div>
+</footer>
+
+    <link rel="stylesheet" href="css/responsive.css">
+</body>
+<script defer src="js/signup_modal.js"></script>
+</html>

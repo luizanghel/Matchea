@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="LuizAnghel, EmersonC">
+    <meta name="description" content="Plantilla web para empresas de startups">
+    <meta name="keywords" content="Startup, Web, Empresa, Emprendimiento ">
+    <meta name="copyright" content="Luiz Anghel">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/signup_modal.css"> <!-- CSS adicional para el modal -->
+    <title>StartUP Plantilla WEB</title>
+    <link rel="shortcut icon" href="img/favicon.ico" type="imag/x-icon" >
+</head>
+
+<body>
+    <!-- HEADER -->
+    <header>
+        <picture class="imagenfondo">
+            <source srcset="img/fondo2000px.avif" media="(min-width: 1800px)">
+            <source srcset="img/fondo1400px.avif" media="(min-width: 1400px)">
+            <source srcset="img/fondo900px.avif" media="(min-width: 900px)">
+            <img src="img/fondo400px.avif" alt="Background">
+        </picture>
+        <div class="overlay"></div>
+        <div class="contenedorbarra">
+            <nav>
+                <a class="navbarlogo" href="index.html">
+                    
+                    <img src="img/logo.png" alt="LOGO" style="width: 30%;">
+                </a>
+                <div class="menu-icon" onclick="toggleMenu()">&#9776;</div>
+                <ul class="nav-menu">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="About.html">About</a></li>
+                    <li><a href="Services.html">Services</a></li>
+                    <li><a href="Contact.html">Contact</a></li>   
+                    <li><a href="javascript:void(0)" id="signupButton">Sign up free</a></li>
+                    <li><a href="javascript:void(0)" id="signinButton">Login</a></li>
+                    
+                </ul>
+            </nav>
+            
+        </div>
+        <div class="textheader">
+            <h1>Bienvenido a StartUP: Conectando Emprendedores con Profesionales para Impulsar Startups</h1>
+            <p>Nos dedicamos a conectar a emprendedores con profesionales expertos, brindándote las herramientas y el apoyo que necesitas para llevar tu startup al siguiente nivel.</p>
+            <a href="#contacto" class="boton">Contactanos</a>
+        </div>
+    </header>
+
+    <script>
+        function toggleMenu() {
+            var menu = document.querySelector('.nav-menu');
+            menu.classList.toggle('active');
+        }
+    </script>
+
+    <section>
+  
+  
+  <!-- Modal Sign Up Form -->
+  <div id="signupModal" class="modal">
+    <div class="modal-content">
+        <span class="close-button">&times;</span>
+        <img src="img/logo.png" alt="LOGO" class="modal-logo">
+        <h2>Join the community</h2>
+        <form action="" method="post">
+            <input type="text" id="first-name" name="first-name" placeholder="First Name" required>
+            <input type="text" id="last-name" name="last-name" placeholder="Last Name" required>
+            <input type="email" id="email" name="email" placeholder="Email" required>
+            <input type="password" id="password" name="password" placeholder="Password" required>
+            <div class="checkbox-group">
+                <label>
+                    <input type="checkbox" name="newsletter"> Please send me the occasional newsletter
+                </label>
+                <label>
+                    <input type="checkbox" name="privacy-policy" required> I agree to the privacy policy and terms of service
+                </label>
+            </div>
+            <a href="#">Read our privacy policy</a><br>
+            <a href="#">Read our terms of service</a>
+            <button type="submit" class="submit-button">Find me a co-founder!</button>
+        </form>
+    </div>
+</div>
+
+
+    <!-- Modal Sign In Form -->
+    <div id="signinModal" class="modal">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <img src="img/logo.png" alt="LOGO" class="modal-logo">
+            <h2>Welcome Back</h2>
+            <form action="" method="post">
+                <input type="email" id="email" name="email" placeholder="Email" required>
+                <input type="password" id="password" name="password" placeholder="Password" required>
+                <div class="checkbox-group">
+                    <label>
+                        <input type="checkbox" name="remember-me"> Remember me
+                    </label>
+                </div>
+                <a href="#">Forgot your password?</a><br>
+                <button type="submit" class="submit-button">Sign In</button>
+            </form>
+        </div>
+    </div>
+
+</section>
+
+    
+    <!-- TODO Cambiar el logotipo y mejorar los imagenes, verificar si estas quedaran -->
+
+    <!-- FIXME NO PUEDO HACER EL BOTON TAL   -->
+
+    <footer>
+        <div class="width-l grid-footer color-foot">
+            <div class="footer-section">
+    
+                <h2>Saludanos</h2>
+                
+                <ul>
+                    <li><a id="info" href="mailto:info@matchea.com">info@matchea.com</a></li>
+                </ul>
+                <div class="sociales">
+                    <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer">
+                        <img src="logos/facebook.png" alt="facebook">
+                    </a>
+                    <a id="X" href="https://x.com/home" target="_blank" rel="noopener noreferrer">
+                        <img src="logos/icons8-x-50.png" alt="X">
+                    </a>
+                    <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer">
+                        <img src="logos/instagram.png" alt="Instagram">
+                    </a>
+                </div>
+            </div>
+    
+            <div class="footer-section">
+                <h2>Productos</h2>
+                <ul>
+                    <li><a href="index.html">Free</a></li>
+                    <li><a href="index.html">Premium</a></li>
+                </ul>
+            </div>
+    
+            <div class="footer-section">
+                <h2>Recursos</h2>
+                <ul>
+                    <li><a href="index.html">Política de Privacidad</a></li>
+                    <li><a href="index.html">Compañía</a></li>
+                    <li><a href="index.html">Blog</a></li>
+                </ul>
+            </div>
+    
+            <div class="footer-section">
+                <h2>Únete a la Newsletter</h2>
+                <form class="newsletter-form">
+                    <input type="email" placeholder="Type email here" required>
+                    <button type="submit">Subscribe</button>
+                </form>
+            </div>
+        </div>
+    </footer>
+
+
+</body>
+
+
+
+
+<script defer src="js/signup_modal.js"></script>
+
+
+
+</html>
