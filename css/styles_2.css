@@ -1,14 +1,29 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 
-
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+    
+}
 /* General Styles */
 body {
-    font-family: 'Roboto', sans-serif;
     line-height: 1.6;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     background-color: #f9f9f9;
     color: #333;
+
+    & ul {
+        margin: 0;
+        padding: 0;
+    }
+    
+    & li {
+        margin: 0;
+    }
 }
 
 .container {
@@ -25,14 +40,14 @@ img {
 /* Header */
 .header {
     background-color: #fff;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    box-shadow: 0px 4px 20px rgba(238, 245, 255, 1);
     position: fixed;
     width: 100%;
     top: 0;
-    z-index: 1000;
+    z-index: 10;
 }
 
-.navbar {
+.navbar-dos {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -42,7 +57,7 @@ img {
 .logo {
     font-size: 1.8rem;
     font-weight: 700;
-    color: #007bff;
+    color: #eef5ff;
     text-decoration: none;
 }
 
@@ -60,8 +75,84 @@ img {
 }
 
 .nav-menu li a:hover {
-    color: #007bff;
+    color: #ed1c24;
 }
+
+.menu-toggle {
+    display: none; /* Asegura que sea visible */
+    justify-content: center;
+    align-items: center;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 1.5rem; /* Tamaño del ícono */
+    color: #1c34b4; /* Color del ícono */
+}
+
+.menu-icon {
+    font-size: inherit; /* Hereda el tamaño del contenedor */
+    transition: color 0.3s ease; /* Transición para hover */
+}
+
+.menu-toggle:hover .menu-icon {
+    color: #ed1c24; /* Cambia de color al hacer hover */
+}
+
+/* Menú móvil */
+.mobile-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background-color: #fff;
+    width: 100%;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+}
+
+.mobile-menu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.mobile-menu ul li a {
+    text-decoration: none;
+    color: #333;
+    font-size: 1rem;
+    display: block;
+    padding: 10px 0;
+}
+
+.close-menu {
+    background-color: #eef5ff;
+    color: #333;
+    border: 1px solid #fff;
+    border-radius: 25px;
+    padding: 10px 15px;
+    cursor: pointer;
+}
+
+/* Responsividad */
+@media (max-width: 768px) {
+    .nav-menu {
+        display: none; /* Oculta el menú principal */
+    }
+
+    .menu-toggle {
+        display: block; /* Muestra el botón de menú hamburguesa */
+    }
+
+    .mobile-menu {
+        display: none; /* Oculta el menú móvil inicialmente */
+    }
+
+    .mobile-menu.active {
+        display: block; /* Muestra el menú móvil al activar */
+    }
+}
+
+
 
 /* Hero Section */
 .hero {
@@ -189,31 +280,472 @@ img {
     margin: 0 auto;
 }
 
-/* Footer */
-.footer {
+/* ######################## Footer ######################## */
+
+footer {
     padding: 2rem 0;
-    background-color: #333;
-    color: #fff;
+    background-color: #eef5ff;
+    color: #000000;
     text-align: center;
 }
 
-.footer p {
-    margin: 0.5rem 0;
+
+.grid-footer {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 30px;
+    max-width: 1200px;
+    padding-top: 2rem;
+    margin: 0 auto;
 }
 
-.social-icons {
-    margin-top: 1rem;
+.footer-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
-.social-icons a {
-    display: inline-block;
-    margin: 0 0.5rem;
+.footer-logo {
+    width: 120px;
+    margin-bottom: 20px;
 }
 
-.social-icons img {
+.footer-section h2 {
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+}
+
+.footer-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-section ul li {
+    margin-bottom: 10px;
+}
+
+.footer-section a {
+    color: #000000;
+    text-decoration: none;
+}
+
+.footer-section a:hover {
+    text-decoration: underline;
+}
+
+.sociales {
+    display: flex;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.sociales a img {
     width: 30px;
     height: 30px;
 }
+
+/* ######################################################### */
+
+/* INTRO */
+
+/* Estilo para la sección de introducción 
+    ######################## INTRO #################################
+*/
+.intro {
+    padding: 6rem 0;
+    background-color: #fff;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: auto; /* Permite que el contenedor crezca según el contenido */
+    min-height: 80vh; /* Asegura que tenga al menos 80% del alto de la pantalla */
+}
+
+
+.intro-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Dos columnas */
+    align-items: center; /* Alinea verticalmente el contenido */
+    gap: 2rem; /* Espaciado entre columnas */
+    min-height: 70vh; /* Al menos 70% del alto de la pantalla */
+    height: auto; /* Permite que el contenedor crezca dinámicamente */
+}
+
+
+.intro-text {
+    text-align: left; /* Alinea el texto a la izquierda */
+}
+
+.intro-text h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    text-align: center;
+    color: #1c34b4;
+}
+
+.intro-text p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.intro-image img {
+    max-width: 100%;
+    max-height: 100%; /* Asegúrate de que no exceda el contenedor */
+    object-fit: contain; /* Asegura que la imagen no se recorte */
+    display: block; 
+    margin: 0 auto;
+}
+
+.signup-button {
+    background-color: #ff4d4f; /* Color de fondo rojo */
+    color: #fff; /* Texto blanco */
+    border: none; /* Sin bordes */
+    border-radius: 20px; /* Bordes redondeados */
+    padding: 10px 20px; /* Espaciado interno */
+    font-size: 1rem; /* Tamaño de fuente */
+    font-weight: bold; /* Texto en negrita */
+    text-transform: uppercase; /* Texto en mayúsculas */
+    cursor: pointer; /* Cambia el cursor al pasar el ratón */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Sombra similar al botón "MATCH" */
+    transition: all 0.3s ease; /* Transición suave */
+    display: block; /* Asegura que se pueda centrar */
+    margin: 20px auto; /* Centra horizontalmente con auto */
+    text-align: center; /* Centra el texto dentro del botón */
+}
+
+.signup-button:hover {
+    background-color: #e60000; /* Color más oscuro en hover */
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2); /* Sombra más intensa */
+}
+
+
+@media (max-width: 888px) {
+    .intro-grid {
+        grid-template-columns: 1fr; /* Cambia a una sola columna */
+        gap: 1rem; /* Reduce el espacio entre elementos */
+    }
+
+    .intro-text {
+        text-align: center; /* Centra el texto */
+    }
+
+    .intro-text h1 {
+        font-size: 2rem;
+    }
+
+
+    .intro-image img {
+        max-width: 80%; /* Asegura que la imagen no ocupe demasiado espacio */
+        height: auto; /* Mantén las proporciones */
+    }
+
+    .wave-container {
+        height: 100px; /* Reduce la altura de la ola */
+        position: absolute;
+        bottom: 0;
+    }
+}
+
+.wave-container {
+    position: absolute; /* Coloca la ola en la posición absoluta dentro de la sección */
+    bottom: 0; /* Asegura que la ola esté al final */
+    left: 0;
+    width: 100%; /* La ola ocupa todo el ancho */
+    height: auto; /* Ajusta automáticamente la altura */
+    overflow: hidden; /* Evita desbordamientos */
+    z-index: 1; /* Asegura que no se superponga con contenido anterior */
+}
+
+.wave-container svg {
+    display: block; 
+    width: 100%;
+    height: auto;
+}
+
+/* ####################### FINAL INTRO ###################### */
+
+.cuerpo_celeste {
+    padding-top: 6.5rem;
+    margin-top: -1rem;
+    background-color: #eef5ff;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: auto; /* Permite que el contenedor crezca según el contenido */
+
+    & h2 {
+        color:#ed1c24;
+        font-size: 2rem;
+        margin-bottom: 2rem;
+    }
+    & p {
+      margin-bottom: 2rem;
+      font-size: 1rem;
+    }
+
+    & img {
+        max-width: 100%;
+        max-height: 100%; /* Asegúrate de que no exceda el contenedor */
+        object-fit: contain; /* Asegura que la imagen no se recorte */
+        display: block; 
+    }
+}
+.wave-container-cuerpo {
+    bottom: 0; /* Asegura que la ola esté al final */
+    left: 0;
+    width: 100%; /* La ola ocupa todo el ancho */
+    height: auto; /* Ajusta automáticamente la altura */
+    overflow: hidden; /* Evita desbordamientos */
+    z-index: 3; /* Asegura que no se superponga con contenido anterior */
+}
+
+.wave-container-cuerpo svg {
+    display: block; 
+    width: 100%;
+    height: auto;
+}
+
+/* Sección general */
+.cuerpo_blanco {
+    padding-top: 6.5rem;
+    margin-top: -1rem;
+    background-color: #fff;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: auto; /* Permite que el contenedor crezca según el contenido */
+
+}
+.platform-section {
+    padding: 4rem 0;
+    background-color: #eef5ff;
+}
+
+.platform-grid {
+    display: grid;
+    grid-template-columns: 1fr 2fr 2fr;
+    gap: 2rem;
+    align-items: flex-start;
+}
+
+/* Descripción del servicio */
+.platform-description {
+    text-align: left;
+}
+
+.platform-description h2 {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+    color: #1c34b4;
+}
+
+.platform-description p {
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+}
+
+
+/* Perfiles */
+.profiles {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.profile-card {
+    background-color: #eef5ff;
+    padding: 1.5rem;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    
+}
+
+.profile-img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    margin-bottom: 1rem;
+}
+
+.profile-card h3 {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+}
+
+.profile-card .role {
+    font-size: 0.9rem;
+    color: #555;
+    margin-bottom: 1rem;
+}
+
+.profile-card p {
+    font-size: 0.9rem;
+    color: #333;
+}
+
+.quick-view-button {
+    padding: 10px 15px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.quick-view-button:hover {
+    background-color: #0056b3;
+}
+
+/* Chat */
+.chat {
+    background-color: #eef5ff;
+    padding: 1.5rem;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.chat-messages {
+    height: 200px;
+    overflow-y: auto;
+    margin-bottom: 1rem;
+}
+
+.message {
+    margin-bottom: 1rem;
+}
+
+.sender {
+    font-weight: bold;
+    margin-right: 5px;
+}
+
+.time {
+    font-size: 0.8rem;
+    color: #888;
+    margin-left: 5px;
+}
+
+.chat-input {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.chat-input input {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.chat-input button {
+    padding: 10px 15px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.chat-input button:hover {
+    background-color: #0056b3;
+}
+
+/* Mostrar texto completo por defecto */
+.full-text {
+    display: block;
+}
+
+/* Ocultar el texto resumen por defecto */
+.summary-text {
+    display: none;
+}
+
+/* Responsivo para pantallas pequeñas */
+@media (max-width: 768px) {
+    .platform-grid {
+        grid-template-columns: 1fr; /* Cambiar a una sola columna */
+        gap: 1rem;
+    }
+    h2 {
+        text-align: center;
+    }
+
+    .profile-andrew {
+        display: none; /* Ocultar la tarjeta de Andrés */
+    }
+
+    .full-text {
+        display: none; /* Ocultar el texto completo */
+    }
+
+    .summary-text {
+        display: block; /* Mostrar el texto resumen */
+    }
+
+    .chat {
+        margin-top: 1rem;
+    }
+}
+
+
+.icon-box {
+    background: #fff;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.icon-box:hover {
+    transform: translateY(-10px);
+}
+
+.icon-box i {
+    color: #007bff; /* Color principal para los íconos */
+}
+
+.icon-box h5 {
+    font-size: 1.2rem;
+    margin: 1rem 0;
+    color: #333;
+}
+
+.icon-box p {
+    font-size: 0.9rem;
+    color: #555;
+}
+
+
+.cuerpo_blanco h2 {
+    font-size: 2rem;
+    color: #1c34b4; /* Color del título */
+    margin-bottom: 2rem;
+    font-weight: bold;
+}
+
+.video-container {
+    max-width: 800px;
+    margin: 0 auto;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    overflow: hidden; /* Para asegurar que el video se ajuste a los bordes redondeados */
+}
+
+.video-container video {
+    width: 100%;
+    height: auto;
+    border: none;
+}
+
 
 /* Contact Section */
 .contact {
