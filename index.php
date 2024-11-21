@@ -1,5 +1,63 @@
 <?php
-include_once 'connection.php';
+session_start();
+
+if (isset($_SESSION['usuario_id'])) {
+    header("Location: php/dashboard.php");
+    exit;
+}
+
+if (isset($_GET['login_error']) && $_GET['login_error'] == 1) {
+    $error_message = "Credenciales incorrectas. Por favor, inténtalo de nuevo.";
+}
+
+
+require 'connection.php'; // Conexión a la base de datos
+require './php/autouser.php';   // Función para generar nombres de usuario
+
+if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['signup'])) {
+    $nombre = trim($_POST['first-name']);
+    $apellido = trim($_POST['last-name']);
+    $email = trim($_POST['email']);
+    $password = trim($_POST['password']);
+    $pais = trim($_POST['country']);
+
+    // Validación básica
+    if (empty($nombre) || empty($apellido) || empty($email) || empty($password)) {
+        die('Por favor, completa todos los campos obligatorios.');
+    }
+
+    // Validar formato de email
+    if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+        die('El formato del correo electrónico no es válido.');
+    }
+
+    // Generar un username único
+    $usuario = generateUniqueUsername($nombre, $apellido, $conn);
+
+    // Cifrar la contraseña
+    $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
+
+    try {
+        // Insertar datos en la base de datos
+        $sql = "INSERT INTO usuarios (nombre, email, usuario, contrasena, pais) VALUES (:nombre, :email, :usuario, :contrasena, :pais)";
+        $stmt = $conn->prepare($sql);
+        $stmt->bindParam(':nombre', $nombre);
+        $stmt->bindParam(':email', $email);
+        $stmt->bindParam(':usuario', $usuario);
+        $stmt->bindParam(':contrasena', $hashedPassword);
+        $stmt->bindParam(':pais', $pais);
+
+        $stmt->execute();
+        echo "Usuario registrado con éxito. Tu username es: $usuario";
+    } catch (PDOException $e) {
+        if ($e->getCode() === '23000') {
+            die('El correo electrónico ya está en uso.');
+        } else {
+            die('Error: ' . $e->getMessage());
+        }
+    }
+}
+
 
 // Obtener todas las tareas
 // $querySelectAll = "SELECT * FROM matchea";
