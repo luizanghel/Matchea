@@ -1,0 +1,9 @@
+# Restringir ejecución de scripts en la carpeta uploads
+<FilesMatch "\.(php|html|htm|js)$">
+    Deny from all
+</FilesMatch>
+
+# Permitir solo acceso a imágenes
+<FilesMatch "\.(jpg|jpeg|png|gif)$">
+    Allow from all
+</FilesMatch>
