@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="css/styles_2.css">
     <link rel="stylesheet" href="css/styles_3.css">
     <link rel="stylesheet" href="css/signup_modal.css"> <!-- CSS adicional para el modal -->
+    <link rel="shortcut icon" href="img/favicon.ico" type="imag/x-icon" >
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -36,7 +37,7 @@
             <div class="services-grid">
                 <div class="service-item">
                     <div class="service-image-wrapper">
-                        <img src="https://tekla.io/wp-content/uploads/2022/03/DesarrolloWeb-1920x732-1.jpg" alt="Desarrollo Web">
+                        <img src="img/DesarrolloWeb.jpg" alt="Desarrollo Web" >
                     </div>
                     <div class="service-content">
                         <h2>Desarrollo Web</h2>
@@ -46,7 +47,7 @@
                 </div>
                 <div class="service-item">
                     <div class="service-image-wrapper">
-                        <img src="https://www.novatechlanzarote.com/wp-content/uploads/2016/09/Novatech-Tecnolog%C3%ADas-de-la-Informaci%C3%B3n-Lanzarote-.jpg" alt="Consultoría Tecnológica">
+                        <img src="img/tecnologia.jpg" alt="Consultoría Tecnológica">
                     </div>
                     <div class="service-content">
                         <h2>Consultoría Tecnológica</h2>

@@ -11,6 +11,7 @@
     <title>Sobre Nosotros - StartUP</title>
     <link rel="stylesheet" href="css/styles_2.css">
     <link rel="stylesheet" href="css/signup_modal.css"> <!-- CSS adicional para el modal -->
+    <link rel="shortcut icon" href="img/favicon.ico" type="imag/x-icon" >
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -30,7 +31,7 @@
         
             <div class="hero-content">
                 <h1>Sobre Nosotros</h1>
-                <p>Somos una startup dinámica y en constante crecimiento, dedicada a ofrecer soluciones innovadoras diseñadas para transformar el mundo digital. Nos especializamos en desarrollar herramientas y estrategias que ayudan a nuestros clientes a enfrentar los desafíos actuales y a aprovechar al máximo las oportunidades que ofrece la tecnología</p>
+                <p>Somos Matchea que es una plataforma global para emprendedores donde puedes encontrar tu equipo ideal para emprender y hacer realidad tus ideas. Conecta con cofundadores y forma asociaciones que trascienden fronteras, utilizando nuestro innovador sistema de coincidencias y mensajería intuitiva. Simplificamos la búsqueda de socios para crear empresas exitosas juntos.</p>
             </div>
             <div class="hero-image">
                 <img src="https://services.meteored.com/img/article/rowing-team-crosses-the-atlantic-data-from-the-trek-lends-new-information-about-the-limits-of-the-human-body-1697070035671_1024.png" alt="Nuestro equipo trabajando juntos" >
@@ -43,7 +44,7 @@
     <section class="mission">
         <div class="container">
             <h2>Nuestra Misión</h2>
-            <p>Ofrecer productos y servicios que impulsen el crecimiento de empresas emergentes mediante la implementación de tecnologías avanzadas y soluciones personalizadas.</p>
+            <p>Nuestra misión es conectar emprendedores apasionados de todo el mundo, ayudándoles a encontrar cofundadores y formar equipos sólidos que impulsen la creación de nuevas empresas y proyectos innovadores. Matchea busca ser un puente para transformar ideas en realidades, fomentando conexiones significativas y colaboraciones duraderas</p>
         </div>
     </section>
     
@@ -53,17 +54,17 @@
             <h2>Nuestro Equipo</h2>
             <div class="team-grid">
                 <div class="team-member">
-                    <img src="https://media.licdn.com/dms/image/v2/D4D35AQEcnjuMWU7gPQ/profile-framedphoto-shrink_200_200/profile-framedphoto-shrink_200_200/0/1725531416242?e=1732978800&v=beta&t=IoZg5KkhYkRuzOm7JcbSK8tk6u3EVCgXDgdIv5hBQ-g" alt="Desarrollador" style="width: 50%;">
+                    <img src="img/Luis.jpg" alt="Desarrollador" style="width: 50%;">
                     <h3>Luis Escobar</h3>
-                    <p>Desarrollador Frontend</p>
+                    <p>Desarrollador Full Stack</p>
                 </div>
                 <div class="team-member">
-                    <img src="https://media.licdn.com/dms/image/v2/D4D03AQHtlLtEp0qXIw/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1727212070640?e=1737590400&v=beta&t=yhtlReTRFUgA4RB00zgjpSgW9_UPaWGSV1tw4clH1y4" alt="Estratega"style="width: 50%;">
-                    <h3>Jasmin Rios</h3>
+                    <img src="img/Jazmin.jpg" alt="Estratega"style="width: 50%;">
+                    <h3>Jazmin Rios</h3>
                     <p>Estratega </p>
                 </div>
                 <div class="team-member">
-                    <img src="https://media.licdn.com/dms/image/v2/D4E03AQEN6PXtpIZcyA/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1687898792035?e=1737590400&v=beta&t=A6M0Z8uo615LkL71zuOJbn8xViffcRpJ3pMHL5yFErM" alt="Desarrollador"style="width: 50%;">
+                    <img src="img/Emerson.jpg" alt="Desarrollador"style="width: 50%;">
                     <h3>Emerson Cuadros</h3>
                     <p>Desarrollador web</p>
                 </div>

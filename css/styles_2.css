@@ -309,8 +309,8 @@ img {
 
 footer {
     padding: 2rem 0;
-    background-color: #eef5ff;
-    color: #000000;
+    background-color: #111; /* Fondo oscuro */
+    color: white;
     text-align: center;
 }
 
@@ -328,29 +328,35 @@ footer {
     display: flex;
     flex-direction: column;
     align-items: center;
+    color: white;
 }
 
 .footer-logo {
     width: 120px;
     margin-bottom: 20px;
+    color: white;
 }
 
 .footer-section h2 {
     font-size: 1.2rem;
     margin-bottom: 15px;
+    color: white;
 }
 
 .footer-section ul {
     list-style: none;
     padding: 0;
+    color: white;
 }
 
 .footer-section ul li {
     margin-bottom: 10px;
+    color: white;
 }
 
 .footer-section a {
-    color: #000000;
+    
+    color: white;
     text-decoration: none;
 }
 
@@ -368,6 +374,79 @@ footer {
     width: 30px;
     height: 30px;
 }
+
+
+
+.gracias-section {
+    margin-top: 7.5rem;
+    padding: auto;
+    
+    font-family: 'Poppins', sans-serif; /* Tipografía moderna */
+    background: linear-gradient(135deg, #ff7e5f, #feb47b); /* Gradiente llamativo */
+    color: #fff;
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+    animation: fadeIn 1s ease-in-out;
+    transition: transform 0.3s ease;
+}
+
+.gracias-section:hover {
+    transform: scale(1.02); /* Efecto de crecimiento al pasar el cursor */
+}
+
+.gracias-section h2 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 15px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+}
+
+.gracias-section p {
+    font-size: 1.1rem;
+    line-height: 1.5;
+    margin-bottom: 30px;
+    letter-spacing: 0.5px;
+}
+
+.gracias-section .btn-primary {
+    background-color: #00bfa6; /* Color vibrante */
+    border: none;
+    padding: 12px 25px;
+    border-radius: 50px;
+    font-size: 1rem;
+    font-weight: bold;
+    color: #fff;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+}
+
+.gracias-section .btn-primary:hover {
+    background-color: #008f7a;
+    transform: translateY(-3px); /* Efecto de flotación */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+.gracias-section .text-center {
+    text-align: center;
+}
+
+/* Animación de entrada */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+
+
 
 /* ######################################################### */
 

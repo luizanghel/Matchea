@@ -10,6 +10,7 @@
     <meta name="copyright" content="Luiz_Anghel">
     <title>Sobre Nosotros - StartUP</title>
     <link rel="stylesheet" href="css/styles_2.css">
+    <link rel="shortcut icon" href="img/favicon.ico" type="imag/x-icon" >
     <link rel="stylesheet" href="css/signup_modal.css"> <!-- CSS adicional para el modal -->
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
@@ -47,7 +48,7 @@
             <div class="contact-form">
                 <h2>Te ayudamos</h2>
                 <p>¿Tienes alguna duda sobre nuestros productos o servicios? Deja que te asesoremos. Rellena el siguiente formulario y en breve nos pondremos en contacto contigo para responder a tu consulta.</p>
-                <form action="submit_form.php" method="post">
+                <form action="./php/subir_contacto.php" method="post">
                     <label for="name">Nombre:</label>
                     <input type="text" id="name" name="name" required>
                     

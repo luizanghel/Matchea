@@ -1,7 +1,12 @@
 /* General Styles */
 .services {
-    padding: 4rem 2%;
+    padding: 8rem 2%;
     background-color: #f9f9f9; /* Fondo claro para separar la sección */
+}
+
+img {
+    max-width: 100%;
+        align-items: center;
 }
 
 .services-header {
@@ -55,6 +60,7 @@
 .service-image-wrapper img {
     width: 100%; /* La imagen ocupa el ancho del contenedor */
     height: auto;
+    text-align: center;
     display: block;
 }
 
