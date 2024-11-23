@@ -10,6 +10,8 @@ document.addEventListener("DOMContentLoaded", () => {
     const modalHabilidades = document.getElementById("modal-habilidades");
     const modalUsuarios = document.getElementById("modal-usuarios");
     const matchButton = document.getElementById("match-project");
+    const prevProjectButton = document.getElementById("prev-project");
+    const nextProjectButton = document.getElementById("next-project");
 
     let currentIndex = 0;
     let projects = [];
@@ -114,6 +116,15 @@ document.addEventListener("DOMContentLoaded", () => {
                 modal.style.display = "block";
             });
     }
+    prevProjectButton.addEventListener("click", () => {
+        currentIndex = (currentIndex - 1 + projects.length) % projects.length;
+        updateModal(currentIndex);
+    });
+
+    nextProjectButton.addEventListener("click", () => {
+        currentIndex = (currentIndex + 1) % projects.length;
+        updateModal(currentIndex);
+    });
 
     closeButton.addEventListener("click", () => (modal.style.display = "none"));
     closeMainButton.addEventListener("click", () => (modal.style.display = "none"));

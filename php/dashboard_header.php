@@ -6,7 +6,7 @@
             </a>
             <ul class="nav-menu">
                 <li><a href="dashboard.php">Inicio</a></li>
-                <li><a href="proyectos.php">Proyectos</a></li>
+                <li><a href="mis_proyectos.php">Proyectos</a></li>
                 <li><a href="perfil.php">Perfil</a></li>
                 <li><a href="cursos.php">Mis Cursos</a></li>
                 <li><a href="php/logout.php">Cerrar sesión</a></li>
@@ -21,7 +21,7 @@
         <nav class="mobile-menu">
             <ul class="nav-menudos">
                 <li><a href="dashboard.php">Inicio</a></li>
-                <li><a href="proyectos.php">Proyectos</a></li>
+                <li><a href="mis_proyectos.php">Proyectos</a></li>
                 <li><a href="perfil.php">Perfil</a></li>
                 <li><a href="cursos.php">Mis Cursos</a></li>
                 <li><a href="logout.php">Cerrar sesión</a></li>

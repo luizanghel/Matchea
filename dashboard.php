@@ -60,13 +60,13 @@ $usuario = $_SESSION['usuario'];
                 <div class="action-card">
                     <h2>Buscar CoFounder</h2>
                     <p>Explora entre los usuarios y encuentra tu match.</p>
-                    <a href="perfil.php" class="btn">Empezar</a>
+                    <a href="cofounder.php" class="btn">Empezar</a>
                 </div>
 
                 <div class="action-card">
                     <h2>Cursos</h2>
                     <p>Explora y Encuentra los cursos mas relevantes para ti.</p>
-                    <a href="habilidades.php" class="btn">Buscar Cursos</a>
+                    <a href="cursos.php" class="btn">Buscar Cursos</a>
                 </div>
             </section>
         </div>

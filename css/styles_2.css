@@ -1287,3 +1287,76 @@ footer {
         opacity: 1;
     }
 }
+
+/* cofounder */
+
+.cofounder-card {
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease-in-out;
+}
+
+.cofounder-card:hover {
+    transform: scale(1.05);
+}
+
+.cofounder-card .card-body {
+    text-align: center;
+    padding: 20px;
+}
+
+.user-photo {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+}
+
+.user-icon {
+    font-size: 100px;
+    color: #ccc;
+    margin-bottom: 15px;
+}
+
+.cofounder-card .card-title {
+    font-size: 1.5em;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.cofounder-card .card-text {
+    font-size: 0.9em;
+    color: #555;
+}
+
+.cofounder-card ul {
+    list-style: none;
+    padding: 0;
+    margin: 10px 0;
+}
+
+.cofounder-card ul li {
+    background-color: #f9f9f9;
+    padding: 5px;
+    border-radius: 4px;
+    margin-bottom: 5px;
+    font-size: 0.85em;
+}
+
+.cofounder-card .btn {
+    margin: 5px;
+    font-size: 0.9em;
+    padding: 10px 20px;
+}
+
+.cofounder-card .btn-success {
+    background-color: #28a745;
+    border-color: #28a745;
+}
+
+.cofounder-card .btn-primary {
+    background-color: #007bff;
+    border-color: #007bff;
+}
