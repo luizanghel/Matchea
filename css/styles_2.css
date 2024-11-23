@@ -153,40 +153,59 @@ img {
 }
 
 
-
 /* Hero Section */
-.hero {
+.hero  {
     display: flex;
-    align-items: center;
+    
+    align-items: flex-start; /* Alinea las columnas en la parte superior */
+
     justify-content: space-between;
-    padding: 8rem 0;
-    background-color: #eef5ff;
-    margin-top: 5rem;
+    padding: 8rem 5% 0.5rem 5%;
+    background-color: var(--background-light);
+    gap: 5rem;
+    flex-direction: row;
 }
 
 .hero-content {
     flex: 1;
+    text-align: left;
+    max-width: 45%;
 }
 
 .hero-content h1 {
-    font-size: 3rem;
-    margin-bottom: 1rem;
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 2rem;
+    color: var(--main-color);
+    text-align: center;
 }
 
 .hero-content p {
     font-size: 1.2rem;
-    margin-bottom: 2rem;
+    line-height: 1.5;
+    margin-bottom: 3rem;
+    color: var(--text-light);
+    text-align: justify;
 }
 
 .hero-image {
     flex: 1;
     display: flex;
     justify-content: center;
+    align-items: center;
+    max-width: 80%;
+}
+
+.hero-image img {
+    width: 80%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: var(--shadow);
 }
 
 /* Mission Section */
 .mission {
-    padding: 4rem 0;
+    padding: 1.5rem 0;
     background-color: #fff;
     text-align: center;
 }
@@ -204,7 +223,7 @@ img {
 
 /* Team Section */
 .team {
-    padding: 4rem 0;
+    padding: 2rem 0;
     background-color: #eef5ff;
     text-align: center;
 }
@@ -239,9 +258,15 @@ img {
 
 /* Values Section */
 .values {
-    padding: 4rem 0;
-    background-color: #fff;
-    text-align: center;
+    display: flex;
+    
+    align-items: flex-start; /* Alinea las columnas en la parte superior */
+
+    justify-content: space-between;
+    padding: 2rem 5% 0.5rem 5%;
+    background-color: var(--background-light);
+    gap: 5rem;
+    flex-direction: row;
 }
 
 .values h2 {
@@ -264,8 +289,8 @@ img {
 
 /* History Section */
 .history {
-    padding: 4rem 0;
-    background-color: #eef5ff;
+    padding: 4rem 0 -4rem 0;
+    background-color: white;
     text-align: center;
 }
 
