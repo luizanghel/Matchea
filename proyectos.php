@@ -2,38 +2,15 @@
 session_start();
 require 'connection.php';
 
-// Redirigir si el usuario no está autenticado
+// Verificar si el usuario está autenticado
 if (!isset($_SESSION['usuario_id'])) {
-    header("Location: ../index.php");
+    header("Location: login.php");
     exit;
 }
 
-// Variables de sesión disponibles
-$nombre = $_SESSION['nombre'];
-$usuario = $_SESSION['usuario'];
+// Variables de sesión
 $usuario_id = $_SESSION['usuario_id'];
-
-// Obtener proyectos (excluyendo los del usuario actual)
-try {
-    // Consulta para obtener proyectos en los que el usuario no participa
-    $query = "
-        SELECT p.*, u.usuario AS creador_usuario
-        FROM proyectos p
-        LEFT JOIN usuarios u ON p.creador_id = u.id
-        WHERE p.id NOT IN (
-            SELECT proyecto_id
-            FROM participantes_proyecto
-            WHERE usuario_id = :usuario_id
-        )
-        ORDER BY p.nombre ASC;
-    ";
-    $stmt = $conn->prepare($query);
-    $stmt->bindParam(':usuario_id', $user_id, PDO::PARAM_INT);
-    $stmt->execute();
-    $proyectos = $stmt->fetchAll(PDO::FETCH_ASSOC);
-} catch (Exception $e) {
-    die("Error al obtener los proyectos: " . $e->getMessage());
-}
+$nombre = $_SESSION['nombre'];
 
 // Obtener habilidades para el filtro
 $query_habilidades = "SELECT * FROM habilidades";
@@ -55,24 +32,26 @@ $habilidades = $stmt_habilidades->fetchAll(PDO::FETCH_ASSOC);
 </head>
 <body>
     <?php include 'php/dashboard_header.php'; ?>  
+
     <main>
         <div id="dashboard" class="container">
             <section class="dashboardintro">
                 <h1>Explorador de Proyectos</h1>
-                <p>Usuario: <?php echo htmlspecialchars($_SESSION['usuario']); ?></p>
+                <p>Bienvenido, <?php echo htmlspecialchars($nombre); ?></p>
             </section>
 
             <!-- Filtros -->
             <section class="filters">
-                <form id="filter-form" method="GET" action="proyectos.php">
+                <form id="filter-form" method="POST">
                     <div class="form-group">
-                        <label>País:</label>
-                        <select id="filter-project-country" name="filter-project-country" required><option value="">Todos los países</option></select>
+                        <label for="filter-project-country">País:</label>
+                        <select id="filter-project-country" name="pais">
+                            <option value="">Todos los países</option>
+                        </select>
                     </div>
-
                     <div class="form-group">
-                        <label for="habilidad">Habilidad:</label>
-                        <select id="habilidad" name="habilidad">
+                        <label for="filter-project-skill">Habilidad:</label>
+                        <select id="filter-project-skill" name="habilidad">
                             <option value="">Todas</option>
                             <?php foreach ($habilidades as $habilidad): ?>
                                 <option value="<?php echo htmlspecialchars($habilidad['id']); ?>">
@@ -81,10 +60,9 @@ $habilidades = $stmt_habilidades->fetchAll(PDO::FETCH_ASSOC);
                             <?php endforeach; ?>
                         </select>
                     </div>
-
                     <div class="form-group">
-                        <label for="nombre">Nombre del Proyecto:</label>
-                        <input type="text" id="nombre" name="nombre" placeholder="Buscar proyectos">
+                        <label for="filter-project-name">Nombre del Proyecto:</label>
+                        <input type="text" id="filter-project-name" name="nombre" placeholder="Buscar proyectos">
                     </div>
                     <button type="submit" class="btn btn-primary">Filtrar</button>
                 </form>
@@ -93,25 +71,7 @@ $habilidades = $stmt_habilidades->fetchAll(PDO::FETCH_ASSOC);
             <!-- Listado de Proyectos -->
             <section class="projects-list">
                 <div class="row">
-                    <?php foreach ($proyectos as $proyecto): ?>
-                        <div class="col-md-4">
-                        <div class="card project-card" data-pais="<?php echo htmlspecialchars($proyecto['pais']); ?>" 
-                        data-habilidades="<?php echo implode(',', $proyecto['habilidades'] ?? []); ?>">
-                            
-                                <div class="card-body">
-                                    <h5 class="card-title"><?php echo htmlspecialchars($proyecto['nombre']); ?></h5>
-                                    <p class="card-text">
-                                        <strong>Usuario Principal:</strong> <?php echo htmlspecialchars($proyecto['creador_usuario']); ?><br>
-                                        <strong>Descripción:</strong> <?php echo htmlspecialchars($proyecto['descripcion']); ?>
-                                    </p>
-                                    <button class="btn btn-info project-btn-detalle" 
-                                            data-id="<?php echo $proyecto['id']; ?>">Ver Detalles</button>
-                                    <button class="btn btn-success project-btn-match" 
-                                            data-id="<?php echo $proyecto['id']; ?>">Match</button>
-                                </div>
-                            </div>
-                        </div>
-                    <?php endforeach; ?>
+                    <!-- Proyectos dinámicos cargados con AJAX -->
                 </div>
             </section>
         </div>
@@ -119,7 +79,9 @@ $habilidades = $stmt_habilidades->fetchAll(PDO::FETCH_ASSOC);
 
     <?php include 'php/footer.php'; ?>
 
-    <!-- Modal de Detalles del Proyecto -->
+    <!-- Modal -->
+    <!-- Modal -->
+    <!-- Modal -->
     <div id="projectModal" class="modal">
         <div class="modal-content">
             <span class="project-close-button">&times;</span>
@@ -128,17 +90,23 @@ $habilidades = $stmt_habilidades->fetchAll(PDO::FETCH_ASSOC);
             <p id="modal-description"></p>
             <div id="modal-habilidades"></div>
             <div id="modal-usuarios"></div>
+
+            <!-- Botón Match -->
+            <div id="modal-match">
+                <button id="match-project" class="btn btn-success" data-id="<?php echo $proyecto['id']; ?>">Match</button>
+            </div>
+
             <div class="modal-navigation">
                 <button id="prev-project" class="btn btn-secondary">Anterior</button>
                 <button id="next-project" class="btn btn-secondary">Siguiente</button>
             </div>
-            <button id="modal-match" class="btn btn-success">Match</button>
             <button id="close-modal" class="btn btn-danger">Cerrar</button>
         </div>
     </div>
-    <script src="js/filter.js"></script>
-    <script src="js/countries.js"></script>
-    <script src="js/proyectos.js"></script>
 
+
+
+    <script src="js/paises_filtro.js"></script>
+    <script src="js/filter.js"></script>
 </body>
 </html>
