@@ -30,7 +30,7 @@ try {
     $conn->setAttribute(PDO::ATTR_EMULATE_PREPARES, false);
 
     // Mensaje de éxito (opcional, solo para pruebas)
-    echo "Conexión exitosa a la base de datos: $database";
+    //echo "Conexión exitosa a la base de datos: $database";
 } catch (PDOException $e) {
     // Registrar el error en el log del servidor
     error_log("Error de conexión: " . $e->getMessage());

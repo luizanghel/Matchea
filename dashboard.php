@@ -1,5 +1,6 @@
 <?php
 session_start();
+require 'connection.php';
 
 // Redirigir si el usuario no está autenticado
 if (!isset($_SESSION['usuario_id'])) {
@@ -7,9 +8,24 @@ if (!isset($_SESSION['usuario_id'])) {
     exit;
 }
 
+$user_id = $_SESSION['usuario_id'];
+
+// Obtén los datos del usuario, incluyendo la foto
+$query = "SELECT nombre, foto FROM usuarios WHERE id = :id";
+$stmt = $conn->prepare($query);
+$stmt->bindParam(':id', $user_id, PDO::PARAM_INT);
+$stmt->execute();
+$user = $stmt->fetch(PDO::FETCH_ASSOC);
+
+if (!$user) {
+    header("Location: index.php");
+    exit;
+}
+
 // Variables de sesión disponibles
 $nombre = $_SESSION['nombre'];
 $usuario = $_SESSION['usuario'];
+
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -27,8 +43,11 @@ $usuario = $_SESSION['usuario'];
     <main>
         <div id="dashboard" class="container">
             <section class="dashboardintro">
-                <h1>¡Bienvenido(a) al Dashboard, <?php echo $_SESSION['nombre']; ?>!</h1>
-                <p>Usuario: <?php echo $_SESSION['usuario']; ?></p>
+                <?php if (!empty($user['foto'])): ?>
+                    <img src="/Matchea/uploads/profile_pictures/<?php echo htmlspecialchars($user['foto']); ?>" alt="Foto de perfil" class="foto-perfil">
+                <?php endif; ?>
+                <h1>¡Bienvenido(a) al Dashboard, <?php echo htmlspecialchars($user['nombre']); ?>!</h1>
+                <p>Usuario: <?php echo htmlspecialchars($_SESSION['usuario']); ?></p>
             </section>
 
             <section class="dashboard-actions">
@@ -39,15 +58,15 @@ $usuario = $_SESSION['usuario'];
                 </div>
 
                 <div class="action-card">
-                    <h2>Editar Perfil</h2>
-                    <p>Actualiza tu información personal y habilidades para mejorar tu match.</p>
-                    <a href="perfil.php" class="btn">Editar Perfil</a>
+                    <h2>Buscar CoFounder</h2>
+                    <p>Explora entre los usuarios y encuentra tu match.</p>
+                    <a href="perfil.php" class="btn">Empezar</a>
                 </div>
 
                 <div class="action-card">
-                    <h2>Gestionar Habilidades</h2>
-                    <p>Agrega o elimina habilidades relevantes para ti.</p>
-                    <a href="habilidades.php" class="btn">Gestionar Habilidades</a>
+                    <h2>Cursos</h2>
+                    <p>Explora y Encuentra los cursos mas relevantes para ti.</p>
+                    <a href="habilidades.php" class="btn">Buscar Cursos</a>
                 </div>
             </section>
         </div>

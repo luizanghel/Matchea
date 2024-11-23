@@ -8,7 +8,7 @@
                 <li><a href="dashboard.php">Inicio</a></li>
                 <li><a href="proyectos.php">Proyectos</a></li>
                 <li><a href="perfil.php">Perfil</a></li>
-                <li><a href="habilidades.php">Habilidades</a></li>
+                <li><a href="cursos.php">Mis Cursos</a></li>
                 <li><a href="php/logout.php">Cerrar sesión</a></li>
             </ul>
             <button class="menu-toggle" aria-label="Toggle menu">
@@ -23,7 +23,7 @@
                 <li><a href="dashboard.php">Inicio</a></li>
                 <li><a href="proyectos.php">Proyectos</a></li>
                 <li><a href="perfil.php">Perfil</a></li>
-                <li><a href="habilidades.php">Habilidades</a></li>
+                <li><a href="cursos.php">Mis Cursos</a></li>
                 <li><a href="logout.php">Cerrar sesión</a></li>
                 <li><button class="close-menu">Cerrar menú</button></li>
             </ul>

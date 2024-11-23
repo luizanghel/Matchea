@@ -39,6 +39,20 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 throw new Exception("Formato de archivo no permitido. Solo se aceptan JPEG, PNG y GIF.");
             }
 
+            // Verificar si existe una foto anterior
+            $query = "SELECT foto FROM usuarios WHERE id = :id";
+            $stmt = $conn->prepare($query);
+            $stmt->bindParam(':id', $user_id);
+            $stmt->execute();
+            $user = $stmt->fetch(PDO::FETCH_ASSOC);
+
+            if (!empty($user['foto'])) {
+                $oldPhotoPath = $uploadDir . $user['foto'];
+                if (file_exists($oldPhotoPath)) {
+                    unlink($oldPhotoPath); // Borra la foto anterior
+                }
+            }
+
             // Mover el archivo al directorio de uploads
             if (!move_uploaded_file($foto['tmp_name'], $uploadFile)) {
                 throw new Exception("Error al subir la foto.");
@@ -62,4 +76,3 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
 }
 ?>
-
