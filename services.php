@@ -41,7 +41,7 @@
                     <div class="service-content">
                         <h2>Desarrollo Web</h2>
                         <p>Creamos páginas web optimizadas y atractivas para que tu negocio tenga una presencia efectiva en línea.</p>
-                        <a href="#" class="service-link">Saber más</a>
+                        <a href="contact.php" class="service-link">Saber más</a>
                     </div>
                 </div>
                 <div class="service-item">
@@ -51,7 +51,7 @@
                     <div class="service-content">
                         <h2>Consultoría Tecnológica</h2>
                         <p>Te ayudamos a tomar las mejores decisiones tecnológicas para hacer crecer tu negocio.</p>
-                        <a href="#" class="service-link">Saber más</a>
+                        <a href="contact.php" class="service-link">Saber más</a>
                     </div>
                 </div>
                 <div class="service-item">
@@ -61,7 +61,7 @@
                     <div class="service-content">
                         <h2>Marketing Digital</h2>
                         <p>Desarrollamos estrategias de marketing digital para aumentar la visibilidad y el alcance de tu empresa.</p>
-                        <a href="#" class="service-link">Saber más</a>
+                        <a href="contact.php" class="service-link">Saber más</a>
                     </div>
                 </div>
                 <div class="service-item">
@@ -71,7 +71,7 @@
                     <div class="service-content">
                         <h2>Diseño UI/UX</h2>
                         <p>Diseñamos interfaces de usuario atractivas y funcionales para mejorar la experiencia de tus clientes.</p>
-                        <a href="#" class="service-link">Saber más</a>
+                        <a href="contact.php" class="service-link">Saber más</a>
                     </div>
                 </div>
             </div>
@@ -98,8 +98,8 @@
                         <input type="checkbox" name="privacy-policy" required> I agree to the privacy policy and terms of service
                     </label>
                 </div>
-                <a href="#">Read our privacy policy</a><br>
-                <a href="#">Read our terms of service</a>
+                <a href="contact.php">Read our privacy policy</a><br>
+                <a href="contact.php">Read our terms of service</a>
                 <button type="submit" class="submit-button">Find me a co-founder!</button>
             </form>
         </div>
@@ -119,7 +119,7 @@
                         <input type="checkbox" name="remember-me"> Remember me
                     </label>
                 </div>
-                <a href="#">Forgot your password?</a><br>
+                <a href="contact.php">Forgot your password?</a><br>
                 <button type="submit" class="submit-button">Sign In</button>
             </form>
         </div>
@@ -147,8 +147,8 @@
                     <input type="checkbox" name="privacy-policy" required> I agree to the privacy policy and terms of service
                 </label>
             </div>
-            <a href="#">Read our privacy policy</a><br>
-            <a href="#">Read our terms of service</a>
+            <a href="contact.php">Read our privacy policy</a><br>
+            <a href="contact.php">Read our terms of service</a>
             <button type="submit" class="submit-button">Find me a co-founder!</button>
         </form>
     </div>
@@ -168,7 +168,7 @@
                     <input type="checkbox" name="remember-me"> Remember me
                 </label>
             </div>
-            <a href="#">Forgot your password?</a><br>
+            <a href="contact.php">Forgot your password?</a><br>
             <button type="submit" class="submit-button">Sign In</button>
         </form>
     </div>

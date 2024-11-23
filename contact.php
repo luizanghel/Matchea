@@ -35,8 +35,8 @@
                 </div>
                 <div class="contact-method">
                     <h2>Redes Sociales</h2>
-                    <p>Escríbenos lo que necesites en nuestro perfil oficial de Facebook de Banco Pichincha España. Tus comentarios y consultas son bienvenidas todos los días, las 24 horas.</p>
-                    <a href="https://www.facebook.com/bancopichinchaES" target="_blank">Visítanos en Facebook</a>
+                    <p>Escríbenos lo que necesites en nuestro perfil oficial de Facebook. Tus comentarios y consultas son bienvenidas todos los días, las 24 horas.</p>
+                    <a href="https://www.facebook.com" target="_blank">Visítanos en Facebook</a>
                 </div>
                 <div class="contact-method">
                     <h2>Oficinas</h2>
